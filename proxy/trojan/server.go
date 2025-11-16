@@ -204,6 +204,16 @@ func (s *Server) Process(ctx context.Context, network net.Network, conn stat.Con
 		}
 	}
 
+	// ✅ 在这里插入连接数限制逻辑（验证通过的用户）
+	if user != nil {
+		if !incConn(user.Email) {
+			errors.LogWarning(ctx, "user ", user.Email, " connection limit exceeded, drop connection")
+			conn.Close()
+			return nil
+		}
+		defer decConn(user.Email)
+	}
+
 	if isfb && shouldFallback {
 		return s.fallback(ctx, err, sessionPolicy, conn, iConn, napfb, first, firstLen, bufferedReader)
 	} else if shouldFallback {
