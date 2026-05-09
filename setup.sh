@@ -332,6 +332,18 @@ backend be_23762
     server s1 127.0.0.1:23762
 
 #################################################
+# 443 端口 - 纯伪装回落
+#################################################
+frontend fe_443
+    bind *:443
+    # 依然建议开启 inspect-delay，为了让探测器感受到正常的 TLS 握手延迟
+    tcp-request inspect-delay 5s
+    tcp-request content accept if { req_ssl_hello_type 1 }
+    
+    # 无需白名单，全部丢给 Nginx
+    default_backend be_fallback
+
+#################################################
 # fallback
 #################################################
 backend be_fallback
