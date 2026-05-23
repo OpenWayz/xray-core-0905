@@ -347,7 +347,8 @@ frontend fe_443
 # fallback
 #################################################
 backend be_fallback
-    server debian www.debian.org:443
+#    server debian www.debian.org:443
+     server s1 127.0.0.1:8443 check
 EOF
 
 echo "正在应用 iptables 规则..."
