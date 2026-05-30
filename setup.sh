@@ -31,7 +31,7 @@ defaults
 # 42746 -> 42756
 #################################################
 frontend fe_42746
-    bind *:42746
+    bind :::42746 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -47,7 +47,7 @@ backend be_42756
 # 42747 -> 42757
 #################################################
 frontend fe_42747
-    bind *:42747
+    bind :::42747 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -63,7 +63,7 @@ backend be_42757
 # 42744 -> 42754
 #################################################
 frontend fe_42744
-    bind *:42744
+    bind :::42744 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -79,7 +79,7 @@ backend be_42754
 # 42748 -> 42758
 #################################################
 frontend fe_42748
-    bind *:42748
+    bind :::42748 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -95,7 +95,7 @@ backend be_42758
 # 42749 -> 42759
 #################################################
 frontend fe_42749
-    bind *:42749
+    bind :::42749 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -111,7 +111,7 @@ backend be_42759
 # 42751 -> 42761
 #################################################
 frontend fe_42751
-    bind *:42751
+    bind :::42751 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -127,7 +127,7 @@ backend be_42761
 # 42752 -> 42762
 #################################################
 frontend fe_42752
-    bind *:42752
+    bind :::42752 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -143,7 +143,7 @@ backend be_42762
 # 32744 -> 32754
 #################################################
 frontend fe_32744
-    bind *:32744
+    bind :::32744 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -159,7 +159,7 @@ backend be_32754
 # 32746 -> 32756
 #################################################
 frontend fe_32746
-    bind *:32746
+    bind :::32746 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -175,7 +175,7 @@ backend be_32756
 # 32747 -> 32757
 #################################################
 frontend fe_32747
-    bind *:32747
+    bind :::32747 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -191,7 +191,7 @@ backend be_32757
 # 32748 -> 32758
 #################################################
 frontend fe_32748
-    bind *:32748
+    bind :::32748 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -207,7 +207,7 @@ backend be_32758
 # 32752 -> 32762
 #################################################
 frontend fe_32752
-    bind *:32752
+    bind :::32752 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -223,7 +223,7 @@ backend be_32762
 # 23744 -> 23754
 #################################################
 frontend fe_23744
-    bind *:23744
+    bind :::23744 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -239,7 +239,7 @@ backend be_23754
 # 23747 -> 23757
 #################################################
 frontend fe_23747
-    bind *:23747
+    bind :::23747 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -255,7 +255,7 @@ backend be_23757
 # 23746 -> 23756
 #################################################
 frontend fe_23746
-    bind *:23746
+    bind :::23746 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -271,7 +271,7 @@ backend be_23756
 # 23748 -> 23758
 #################################################
 frontend fe_23748
-    bind *:23748
+    bind :::23748 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -287,7 +287,7 @@ backend be_23758
 # 23749 -> 23759
 #################################################
 frontend fe_23749
-    bind *:23749
+    bind :::23749 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -303,7 +303,7 @@ backend be_23759
 # 23751 -> 23761
 #################################################
 frontend fe_23751
-    bind *:23751
+    bind :::23751 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -319,7 +319,7 @@ backend be_23761
 # 23752 -> 23762
 #################################################
 frontend fe_23752
-    bind *:23752
+    bind :::23752 v4v6
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
     acl allowed_sni req.ssl_sni -i i1.hdslb.com
@@ -335,7 +335,7 @@ backend be_23762
 # 443 端口 - 纯伪装回落
 #################################################
 frontend fe_443
-    bind *:443
+    bind :::443 v4v6
     # 依然建议开启 inspect-delay，为了让探测器感受到正常的 TLS 握手延迟
     tcp-request inspect-delay 5s
     tcp-request content accept if { req_ssl_hello_type 1 }
@@ -359,11 +359,17 @@ echo "正在应用 iptables 规则..."
 # 允许本地回环
 iptables -I INPUT 1 -i lo -j ACCEPT
 
-# 屏蔽非本地发往 Nyanpass 后端端口的流量
+# 屏蔽非本地发往 Nyanpass 后端端口的流量ipv4
 for p in 42754 42756 42757 42758 42759 42761 42762 \
          32754 32756 32757 32758 32762 \
          23754 23756 23757 23758 23759 23761 23762; do
     iptables -A INPUT ! -i lo -p tcp --dport $p -j DROP
+done
+# 屏蔽非本地发往 Nyanpass 后端端口的流量ipv6
+for p in 42754 42756 42757 42758 42759 42761 42762 \
+         32754 32756 32757 32758 32762 \
+         23754 23756 23757 23758 23759 23761 23762; do
+    ip6tables -A INPUT ! -i lo -p tcp --dport $p -j DROP
 done
 
 # 保存规则
