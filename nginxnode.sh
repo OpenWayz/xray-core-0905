@@ -47,8 +47,7 @@ location / {
 }
 EOF
 
-ln -sf /etc/nginx/sites-available/fallback 
-/etc/nginx/sites-enabled/fallback
+ln -sf /etc/nginx/sites-available/fallback /etc/nginx/sites-enabled/fallback
 
 echo "检查 Nginx 配置..."
 nginx -t || exit 1
