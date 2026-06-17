@@ -29,7 +29,7 @@ rm -f /etc/nginx/sites-enabled/default
 
 # 创建 Fallback 站点
 
-cat > /etc/nginx/sites-available/fallback << 'EOF'
+cat <<EOF > /etc/nginx/sites-available/fallback
 server {
 listen 127.0.0.1:8080 default_server;
 server_name _;
