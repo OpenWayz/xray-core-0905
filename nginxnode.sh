@@ -16,10 +16,9 @@ apt-get install -y nginx unzip wget
 echo "下载伪装网站..."
 mkdir -p /var/www/fake-site
 
-wget -O /tmp/website.zip 
-https://raw.githubusercontent.com/OpenWayz/xray-core-0905/refs/heads/main/website.zip
+wget -O /tmp/website.zip https://raw.githubusercontent.com/OpenWayz/xray-core-0905/refs/heads/main/website.zip
 
-unzip -oq /tmp/website.zip -d /var/www/fake-site/
+unzip -o /tmp/website.zip -d /var/www/fake-site/
 
 chown -R www-data:www-data /var/www/fake-site
 chmod -R 755 /var/www/fake-site
@@ -35,7 +34,6 @@ server {
 listen 127.0.0.1:8080 default_server;
 server_name _;
 
-```
 root /var/www/fake-site;
 index index.html index.htm;
 
@@ -45,7 +43,6 @@ server_tokens off;
 location / {
     try_files $uri $uri/ /index.html;
 }
-```
 
 }
 EOF
