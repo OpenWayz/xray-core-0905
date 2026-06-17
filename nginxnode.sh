@@ -28,22 +28,20 @@ chmod -R 755 /var/www/fake-site
 rm -f /etc/nginx/sites-enabled/default
 
 # 创建 Fallback 站点
-
-cat <<EOF > /etc/nginx/sites-available/fallback
+cat <<'EOF' > /etc/nginx/sites-available/fallback
 server {
-listen 127.0.0.1:8080 default_server;
-server_name _;
+    listen 127.0.0.1:8080 default_server;
+    server_name _;
 
-root /var/www/fake-site;
-index index.html index.htm;
+    root /var/www/fake-site;
+    index index.html index.htm;
 
-access_log off;
-server_tokens off;
+    access_log off;
+    server_tokens off;
 
-location / {
-    try_files $uri $uri/ /index.html;
-}
-
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
 }
 EOF
 
