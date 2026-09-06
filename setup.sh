@@ -8,7 +8,11 @@ fi
 
 echo "正在安装 HAProxy 和防火墙工具..."
 apt-get update
-apt-get install -y haproxy iptables-persistent
+# 自动选择保存 IPv4 / IPv6 iptables 规则
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
+
+DEBIAN_FRONTEND=noninteractive apt-get install -y haproxy iptables-persistent
 
 # 备份原始配置
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bak
